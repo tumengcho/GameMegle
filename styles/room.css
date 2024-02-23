@@ -229,6 +229,11 @@
   .video-player video{
     border-radius: 50%;
   }
+
+  .mic-options{
+    position: fixed;
+    top: 0;
+}
   
   @media (max-width: 1400px) {
     .video__container{
@@ -246,14 +251,14 @@
       display: block;
     }
   
-    #stream__container {
+    .stream__container {
       width: calc(100% - 25rem);
       left: 0;
     }
   }
   
   @media (max-width: 980px) {
-    #stream__container {
+    .stream__container {
       width: calc(100% - 20rem);
       left: 0;
     }
@@ -267,7 +272,7 @@
   }
   
   @media (max-width: 768px) {
-    #stream__container {
+    .stream__container {
       width: 100%;
     }
   
