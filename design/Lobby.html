@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css" />
+    <link rel='stylesheet' type='text/css' media='screen' href='styles/main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles/lobby.css'>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -16,14 +18,28 @@
     
     <div class="section row m-0 align-items-center">
         <div class="col-6 p-5 text-center">
+            
             <h1 class="py-3">Rejoignez un Lobby!</h1>
-            <a class="btn btn-primary p-2" href="Room.html">Rejoindre</a>
+            <form id="lobby__form">
+ 
+                <div class="form__field__wrapper">
+                    <label>Your Name</label>
+                    <input type="text" name="name" required placeholder="Enter your display name..." />
+                </div>
+        
+                <div class="form__field__wrapper">
+                    <button type="submit">Join 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/></svg>
+                   </button>
+                </div>
+           </form>
         </div>
         <div class="col-6 p-5">
             <img src="images/bc-section-lobby.png" class="img-fluid" alt="">
         </div>
     </div>
 
+   
 
     
     <script
@@ -37,5 +53,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/AgoraRTC_N-4.11.0.js"></script>
+<script type="text/javascript" src="js/lobby.js"></script>
 </body>
 </html>

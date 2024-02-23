@@ -182,6 +182,7 @@ let toggleMic = async (e) => {
 
   if (localTracks[0].muted) {
     await localTracks[0].setMuted(false);
+    button.classList.remove("active");
     button.classList.add("active");
   } else {
     await localTracks[0].setMuted(true);
@@ -194,6 +195,7 @@ let toggleCamera = async (e) => {
 
   if (localTracks[1].muted) {
     await localTracks[1].setMuted(false);
+    button.classList.remove("active");
     button.classList.add("active");
   } else {
     await localTracks[1].setMuted(true);
