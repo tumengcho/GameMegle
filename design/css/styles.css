@@ -1,0 +1,34 @@
+html{
+    background-color: #141414;
+}
+
+.icon-1{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    border-radius: 25%;
+}
+
+.section-top{
+    margin-top: 30px;
+    height: 900px;
+    background-color: #141414;
+    background-image: url("/images/bc-section-top.png");
+    background-size: cover;
+    background-position: 50% 80%;
+    background-repeat: no-repeat;
+}
+
+.section{
+    background-color: #141414;
+    height: 900px;
+}
+
+.section-last{
+    height: 900px;
+    background-color: #141414;
+    background-image: url("/images/bc-last-section-1.png");
+    background-size: cover;
+    background-position: 50% 80%;
+    background-repeat: no-repeat;
+}
