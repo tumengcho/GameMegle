@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/styles.css" />
-    <link rel='stylesheet' type='text/css' media='screen' href='styles/main.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='styles/lobby.css'>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="styles/main.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="styles/lobby.css"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,35 +23,44 @@
       crossorigin="anonymous"
     />
     <title>Lobby</title>
-</head>
-<body class="text-white">
-    
+  </head>
+  <body class="text-white">
     <div class="section row m-0 align-items-center">
-        <div class="col-6 p-5 text-center">
-            
-            <h1 class="py-3">Rejoignez un Lobby!</h1>
-            <form id="lobby__form">
- 
-                <div class="form__field__wrapper">
-                    <label>Your Name</label>
-                    <input type="text" name="name" required placeholder="Enter your display name..." />
-                </div>
-        
-                <div class="form__field__wrapper">
-                    <button type="submit">Join 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/></svg>
-                   </button>
-                </div>
-           </form>
-        </div>
-        <div class="col-6 p-5">
-            <img src="images/bc-section-lobby.png" class="img-fluid" alt="">
-        </div>
+      <div class="col-md-6 p-md-5 text-center order-1 order-md-0">
+        <h1 class="py-3">Rejoignez un Lobby!</h1>
+        <form id="lobby__form">
+          <div class="form__field__wrapper">
+            <label>Your Name</label>
+            <input
+              type="text"
+              name="name"
+              required
+              placeholder="Enter your display name..."
+            />
+          </div>
+
+          <div class="form__field__wrapper">
+            <button type="submit">
+              Join
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"
+                />
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-6 p-md-5 order-0 order-md-1">
+        <img src="images/bc-section-lobby.png" class="img-fluid" alt="" />
+      </div>
     </div>
 
-   
-
-    
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
       integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
@@ -54,6 +73,6 @@
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/AgoraRTC_N-4.11.0.js"></script>
-<script type="text/javascript" src="js/lobby.js"></script>
-</body>
+    <script type="text/javascript" src="js/lobby.js"></script>
+  </body>
 </html>

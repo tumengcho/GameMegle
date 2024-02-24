@@ -2,7 +2,7 @@ let APP_ID = "a4f1794197e94079a0e4be886824c683";
 
 let uid = sessionStorage.getItem("uid");
 if (!uid) {
-  uid = String(1);
+  uid = String(Math.floor(Math.random() * 10000));
   sessionStorage.setItem("uid", uid);
 }
 
@@ -16,9 +16,9 @@ let channel;
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-let roomId = urlParams.get("room");
+let roomID = urlParams.get("room");
 
-if (!roomId) {
+if (!roomID) {
   window.location = "lobby.html";
 }
 
@@ -43,7 +43,7 @@ let joinRoomInit = async () => {
 
   await rtmClient.addOrUpdateLocalUserAttributes({ name: displayName });
 
-  channel = await rtmClient.createChannel(roomId);
+  channel = await rtmClient.createChannel(roomID);
   await channel.join();
 
   channel.on("MemberJoined", handleMemberJoined);
@@ -60,10 +60,9 @@ let joinRoomInit = async () => {
     rooms = JSON.parse(rooms.value);
   }
 
-  if (!rooms.includes(roomId)) {
-    rooms.push(roomId);
-    await rtmClient.addOrUpdateChannelAttributes(roomId, {
-      room_name: roomName,
+  if (!rooms.includes(roomID)) {
+    rooms.push(roomID);
+    await rtmClient.addOrUpdateChannelAttributes(roomID, {
       host: displayName,
     });
   }
@@ -72,7 +71,7 @@ let joinRoomInit = async () => {
   });
 
   client = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
-  await client.join(APP_ID, roomId, rtcToken, uid);
+  await client.join(APP_ID, roomID, rtcToken, uid);
 
   client.on("user-published", handleUserPublished);
   client.on("user-left", handleUserLeft);
@@ -86,8 +85,8 @@ let joinStream = async () => {
     {},
     {
       encoderConfig: {
-        width: { min: 640, ideal: 1920, max: 1920 },
-        height: { min: 480, ideal: 1080, max: 1080 },
+        width: { min: 1920, ideal: 1920, max: 1920 },
+        height: { min: 1920, ideal: 1080, max: 1080 },
       },
     }
   );
@@ -246,6 +245,7 @@ let toggleScreen = async (e) => {
     cameraButton.style.display = "block";
     document.getElementById(`user-container-${uid}`).remove();
     await client.unpublish([localScreenTracks]);
+    await client.publish([localTracks[1]]);
 
     switchToCamera();
   }
