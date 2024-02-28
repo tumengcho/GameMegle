@@ -1,10 +1,36 @@
-html {
-  background-color: #141414;
+body{
+  background-color:#141414;
+  height: fit-content;
+}
+
+html{
+  height: fit-content;
+}
+
+.btn{
+  background-color: #a52aca;
+  border: 0;
+}
+
+
+@font-face {
+  font-family: "DREAM";
+  src: url("/fonts/DreamMMA.ttf");
+}
+
+@font-face {
+  font-family: "RACE";
+  src: url("/fonts/RaceSport.ttf");
 }
 
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: 'RACE';
 }
+
+
+
+
+
 .cam {
   background-color: red;
   height: 80%;
@@ -210,7 +236,9 @@ a {
 }
 
 .section-top {
+  width: 100%;
   height: 900px;
+  font-family: DREAM;
   background-color: #141414;
   background-image: url("/images/bc-section-to1.png");
   background-size: cover;
@@ -220,6 +248,7 @@ a {
 
 .section {
   background-color: #141414;
+  overflow-x: hidden;
   height: 900px;
 }
 
@@ -321,9 +350,7 @@ a {
 }
 
 @media (max-width: 1200px) {
-  #members__container {
-    display: none;
-  }
+  
 
   #members__button {
     display: block;
@@ -361,9 +388,7 @@ a {
   .video__container {
   }
 
-  #messages__container {
-    display: none;
-  }
+  
 
   #chat__button {
     display: block;
